@@ -1,0 +1,33 @@
+{% include 'top.html' %}
+    <div id="content">
+        <h1 class="page-title">Search Book Information</h1>
+		<form class="pure-form pure-form-stacked login" method="POST" action="{{ url_for('perform_books_search') }}">
+
+            <!--<h4>Search for all unitofferings which use a particular textbook.</h4>-->
+            <input type="text" name="textbook" placeholder="textbook" min="0" required>
+
+            <br>
+            <input class="pure-button pure-button-primary" type="submit" value="Search">
+            
+        </form>
+
+        <br><br>
+        <h4 style="text-align:center;">{{query_text}}</h4>
+        <table class="pure-table">
+            <thead>
+                <tr><th>Authors</th><th>Name</th><th>Library</th></tr>
+            </thead>
+            <tbody>
+                
+                {% for book in books %}
+                    <tr>
+						<td> {{book[0]}}</td>
+                        <td> {{book[1]}} </td>
+                        <td> {{book[2]}} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% include 'top.html' %}
+    <div id="content">
+        <h1 class="page-title">Update Textbook</h1>
+		<form class="pure-form pure-form-stacked login" method="POST" action="{{ url_for('perform_textbook_update') }}">
+
+            <h4>Change the textbook for a given unitoffering.</h4>
+            <input type="text" name="uoSCode" placeholder="uoSCode" min="0" required>
+            <input type="text" name="semester" placeholder="semester" min="0" required>
+            <input type="text" name="year" placeholder="year" min="0" required>
+            <input type="text" name="textbook" placeholder="new textbook" min="0" required>
+
+            <br>
+            <input class="pure-button pure-button-primary" type="submit" value="Update">
+            
+        </form>
+
+        <br><br>
+        <h4 style="text-align:center;">{{query_text}}</h4>
+        
+    </div>
+</body>
+</html>
